@@ -50,12 +50,17 @@ git clone https://github.com/Cedric-Perauer/object_detection-.git
 mv object_detection-/* CATKIN_FS/src/
 ```
 
+### 4) generate the .engine file : 
+
+TODO 
+
+
 ### 5) Change the Line 65 in camera_node/src/yolov5.cpp to point to the .engine file location (replace user name with your username) : 
 ```c++
  engine_name = "/home/<user_name>/CATKIN_FS/src/camera_node/src/yolov5s.engine";
 ```
 
-do the same for the file camera_node/src/camera_node.cpp
+do a similar thing in the file camera_node/src/camera_node.cpp (line 23)
 
 ```c++
 std::string paramsFilePath = "/home/<user_name>/CATKIN_FS/camera_node/src/params.txt";
