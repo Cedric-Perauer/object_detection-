@@ -29,11 +29,27 @@ download the ```PyTorch v1.8.0``` .whl file
 
 ## Potential Issues Fix : 
 - If you run into an issue regarding boost (python_boost) or opencv follow these steps : 
-1) install OpenCv3 version (paste into terminal) :
+### 1) install OpenCv3 version (paste into terminal) :
 ```console 
 sudo apt install libopencv-dev=3.2.0+dfsg-4ubuntu0.1
 ```
-2) Change the files according to the post below : 
+
+### 2) Change the 2 files below : 
+
+Commenting row 11 12 in the CMakeLists.txt in the folder vision_opencv/cv_bridge/
+
+```cmake
+if(PYTHONLIBS_VERSION_STRING VERSION_LESS "3.8")
+    # Debian Buster
+    #find_package(Boost REQUIRED python37)
+    #else()
+    # Ubuntu Focal
+    find_package(Boost REQUIRED python)
+  endif()
+```
+
+And adding 0 at the #define NUMPY_IMPORT_ARRAY_RETVAL in the file /usr/include/python2.7/numpy/__multiarray_api.h
 ![](screen2.png)
+
 
 
