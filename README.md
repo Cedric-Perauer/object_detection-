@@ -25,10 +25,36 @@ download the ```PyTorch v1.8.0``` .whl file
 
 ## Install 
 
+### 1) Create a folder called ```CATKIN_FS/src/``` in your home directory : 
+```console 
+mkdir -p CATKIN_FS/src/
+```
+
+### 2) Clone the repo 
+```console 
+git clone https://github.com/Cedric-Perauer/object_detection-.git
+```
+
+### 3) Move files from the object_detection- folder to the CATKIN_FS/src/ folder : 
+```console 
+mv object_detection-/* CATKIN_FS/src/
+```
+
+### 4) go into the CATKIN_FS directory and build the project with catkin build : 
+```console
+cd CATKIN_FS/ 
+```
+```console
+catkin build 
+```
+
+
+
 
 
 ## Potential Issues Fix : 
 - If you run into an issue regarding boost (python_boost) or opencv follow these steps : 
+- 
 ### 1) install OpenCv3 version (paste into terminal) :
 ```console 
 sudo apt install libopencv-dev=3.2.0+dfsg-4ubuntu0.1
