@@ -50,13 +50,41 @@ git clone https://github.com/Cedric-Perauer/object_detection-.git
 mv object_detection-/* CATKIN_FS/src/
 ```
 
-### 4) go into the CATKIN_FS directory and build the project with catkin build : 
+### 5) Change the Line 65 in camera_node/src/yolov5.cpp to point to the .engine file location (replace user name with your username) : 
+```c++
+ engine_name = "/home/<user_name>/CATKIN_FS/src/camera_node/src/yolov5s.engine";
+```
+
+do the same for the file camera_node/src/camera_node.cpp
+
+```c++
+std::string paramsFilePath = "/home/<user_name>/CATKIN_FS/camera_node/src/params.txt";
+```
+
+
+### 6) go into the CATKIN_FS directory and build the project with catkin build : 
 ```console
 cd CATKIN_FS/ 
 ```
 ```console
 catkin build 
 ```
+
+=> When the build is successful you can download the rosbag file using this [link]()
+
+go into the downloads directory where the .bag file is located and run it with :
+```console 
+rosbag play -l camera.bag 
+```
+
+start the camera_node wit : 
+```console 
+rosrun camera_node camera_node 
+```
+
+then you should see an image window openig that looks like this  : 
+![](img.png)
+
 
 
 
