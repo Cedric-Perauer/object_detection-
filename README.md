@@ -23,6 +23,16 @@ download the ```PyTorch v1.8.0``` .whl file
 - after that the torch folder will be in your home directory (see below) 
 ![](screen.png)
 
+follow the other instructions made in the installation section by Nvidia : 
+```
+wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl -O torch-1.8.0-cp36-cp36m-linux_aarch64.whl
+sudo apt-get install python3-pip libopenblas-base libopenmpi-dev 
+pip3 install Cython
+pip3 install numpy torch-1.8.0-cp36-cp36m-linux_aarch64.whl
+```
+
+After that torch should be installed 
+
 ## Install 
 
 ### 1) Create a folder called ```CATKIN_FS/src/``` in your home directory : 
